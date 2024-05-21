@@ -13,6 +13,7 @@
             </StackPanel.Background>
             <Menu>
                 <MenuItem Header="Regisztráció" Name="MniReg" Click="MniReg_Click" HorizontalAlignment="Right"/>
+                <MenuItem Name="MniName"/>
             </Menu>
             <Label Content="Személyek száma:" Margin="5"/>
             <TextBox Name="TbxPerson" Margin="5"/>

@@ -20,7 +20,6 @@ namespace Kikelet_Panzio
     /// </summary>
     public partial class MainWindow : Window
     {
-        internal List<Ugyfel> ugyfelek = new List<Ugyfel>();
         public MainWindow()
         {
             InitializeComponent();
@@ -42,6 +41,7 @@ namespace Kikelet_Panzio
         private void BtnConfirm_Click(object sender, RoutedEventArgs e)
         {
 
+            
         }
     }
 }
