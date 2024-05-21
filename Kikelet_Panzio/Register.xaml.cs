@@ -10,28 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Kikelet_Panzio
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Register.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Register : Window
     {
-        internal List<Ugyfel> ugyfelek = new List<Ugyfel>();
-        public MainWindow()
+        List<Ugyfel> ugyfelek = new List<Ugyfel>();
+        public Register()
         {
             InitializeComponent();
-            
-          
-        }
-
-        private void MniReg_Click(object sender, RoutedEventArgs e)
-        {
-            Register registerWindow = new Register();
-            registerWindow.ShowDialog();
         }
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
@@ -39,9 +30,11 @@ namespace Kikelet_Panzio
             Close();
         }
 
-        private void BtnConfirm_Click(object sender, RoutedEventArgs e)
+        private void BtnRegister_Click(object sender, RoutedEventArgs e)
         {
-
+            string nevid = TbxUsername.Text.ToLower().Replace(" ","") + "_" + DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day;
+            TbxUserID.Text = nevid;
+            ugyfelek.Add(new Ugyfel(TbxUserID.Text, TbxUsername.Text, DateTime.Parse(DtpUserBirth.Text), TbxEmail.Text, CbxIsVIP.IsChecked.Value));
         }
     }
 }

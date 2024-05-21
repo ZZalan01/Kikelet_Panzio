@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kikelet_Panzio"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Kikelet Panzió" Height="450" Width="345" WindowStyle="ThreeDBorderWindow">
     <Grid>
-        
+        <StackPanel>
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/viraghatter.jpg" TileMode="None"/>
+            </StackPanel.Background>
+            <Menu>
+                <MenuItem Header="Regisztráció" Name="MniReg" Click="MniReg_Click" HorizontalAlignment="Right"/>
+            </Menu>
+            <Label Content="Személyek száma:" Margin="5"/>
+            <TextBox Name="TbxPerson" Margin="5"/>
+            <Label Content="Ügyfél neve:" Margin="5"/>
+            <TextBox Name="TbxUser" Margin="5"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Érkezés időpontja:" Margin="5"/>
+                <DatePicker Name="DtpArrival" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Távozás időpontja" Margin="5"/>
+                <DatePicker Name="DtpDeparture" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Name="BtnClose" Content="Kilépés" Width="100" Height="40" Margin="5" Background="#FFFF4141" FontWeight="Medium" Click="BtnClose_Click"/>
+                <Button Name="BtnConfirm" Content="Foglalás" Width="100" Height="40" Margin="5" Background="#FF25FF33" FontWeight="ExtraBold" Click="BtnConfirm_Click" />
+            </StackPanel>
+            
+
+
+
+        </StackPanel>
+
     </Grid>
 </Window>

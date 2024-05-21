@@ -1,0 +1,30 @@
+﻿<Window x:Class="Kikelet_Panzio.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kikelet_Panzio"
+        mc:Ignorable="d"
+        Title="Kikelet Vendég Regisztráció" Height="666" Width="347">
+    <Grid>
+        <StackPanel>
+            <Label Content="Ügyfélazonosító" Margin="5"/>
+            <TextBox Margin="5" Name="TbxUserID" IsReadOnly="True" />
+            <Label Content="Név" Margin="5"/>
+            <TextBox Margin="5" Name="TbxUsername"/>
+            <Label Content="Születési idő" Margin="5"/>
+            <DatePicker Margin="5" Name="DtpUserBirth"/>
+            <Label Content="E-mail cím" Margin="5"/>
+            <TextBox Name="TbxEmail" Margin="5"/>
+            <CheckBox Content="VIP ügyfél*" Margin="5" Name="CbxIsVIP"/>
+            <Label Content="* A VIP ügyfél 3% kedvezményre jogosult az árból és hírlevelet kap negyedévente." FontSize="9"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Megszakítás" Name="BtnClose" Height="50" Width="100" Margin="10" Click="BtnClose_Click"/>
+                <Button Content="Regisztrálok" Name="BtnRegister" Height="50" Width="100" Margin="10" Click="BtnRegister_Click"/>
+            </StackPanel>
+           
+        </StackPanel>
+
+    </Grid>
+</Window>
