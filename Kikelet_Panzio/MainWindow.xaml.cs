@@ -20,11 +20,22 @@ namespace Kikelet_Panzio
     /// </summary>
     public partial class MainWindow : Window
     {
+        internal static List<Ugyfel> ugyfelek = new List<Ugyfel>();
+        
         public MainWindow()
         {
             InitializeComponent();
+            for (int i = 1; i <= 6; i++)
+            {
+                CbxRooms.Items.Add(i);
+            }
+            for (int i = 1;i <= 4; i++)
+            {
+                CbxPeople.Items.Add(i);
+            }
+
             
-          
+
         }
 
         private void MniReg_Click(object sender, RoutedEventArgs e)
@@ -41,7 +52,15 @@ namespace Kikelet_Panzio
         private void BtnConfirm_Click(object sender, RoutedEventArgs e)
         {
 
-            
+            DtgDatas.Items.Add(ugyfelek);
+            DtgDatas.Items.Refresh();
+        }
+
+
+        private void MniStats_Click(object sender, RoutedEventArgs e)
+        {
+            Stats statsWindow = new Stats();
+            statsWindow.ShowDialog();
         }
     }
 }
