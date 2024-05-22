@@ -19,7 +19,7 @@ namespace Kikelet_Panzio
     /// </summary>
     public partial class Register : Window
     {
-        internal List<Ugyfel> ugyfelek = new List<Ugyfel>();
+       
         public Register()
         {
             InitializeComponent();
@@ -34,9 +34,12 @@ namespace Kikelet_Panzio
         {
             string nevid = TbxUsername.Text.ToLower().Replace(" ","") + "_" + DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day;
             TbxUserID.Text = nevid;
-            ugyfelek.Add(new Ugyfel(TbxUserID.Text, TbxUsername.Text, DateTime.Parse(DtpUserBirth.Text), TbxEmail.Text, CbxIsVIP.IsChecked.Value));
+            MainWindow.ugyfelek.Add(new Ugyfel(TbxUserID.Text, TbxUsername.Text, DateTime.Parse(DtpUserBirth.Text), TbxEmail.Text, CbxIsVIP.IsChecked.Value));
             MessageBox.Show("Regisztrációját rögzítettük! Az ablak bezárul.", "Siker", MessageBoxButton.OK, MessageBoxImage.Information);
             Close();
+            
+            
+            
         }
     }
 }
