@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kikelet_Panzio"
         mc:Ignorable="d"
-        Title="Kikelet Vendég Regisztráció" Height="450" Width="347">
+        Title="Kikelet Vendég Regisztráció" Height="450" Width="354">
     <Grid>
         <StackPanel>
             <Label Content="Ügyfélazonosító" Margin="5"/>

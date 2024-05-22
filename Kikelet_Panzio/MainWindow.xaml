@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kikelet_Panzio"
         mc:Ignorable="d"
-        Title="Kikelet Panzió" Height="326" Width="597" WindowStyle="ThreeDBorderWindow">
+        Title="Kikelet Panzió" Height="450" Width="800" WindowStyle="ThreeDBorderWindow">
     <Window.Background>
         <ImageBrush/>
     </Window.Background>
@@ -20,28 +20,28 @@
                 <MenuItem Header="Statisztika" Name="MniStats" Click="MniStats_Click"/>
             </Menu>
             <StackPanel Orientation="Horizontal">
-            <Label Content="Szobaszám:" Margin="5"/>
+                <Label Content="Szobaszám:" Margin="5"/>
                 <ComboBox Name="CbxRooms" Width="100" HorizontalAlignment="Left" Margin="5"/>
-            
-            <Label Content="Fő:"/>
+
+                <Label Content="Fő:"/>
                 <ComboBox Name="CbxPeople" Width="50" Margin="5"/>
             </StackPanel>
-            
+
             <StackPanel Orientation="Horizontal">
                 <Label Content="Ügyfél neve:" Margin="5"/>
                 <ComboBox Name="CbxName" Width="180" Margin="5"/>
             </StackPanel>
-            
+
             <StackPanel Orientation="Horizontal">
                 <Label Content="Érkezés időpontja:" Margin="5"/>
                 <DatePicker Name="DtpArrival" Margin="5"/>
             </StackPanel>
-            
+
             <StackPanel Orientation="Horizontal">
                 <Label Content="Távozás időpontja" Margin="5"/>
                 <DatePicker Name="DtpDeparture" Margin="5"/>
             </StackPanel>
-            
+
             <StackPanel Orientation="Horizontal">
                 <Label Content="Ár"  Margin="5"/>
                 <TextBox Name="TbxPrice" Margin="5" Width="110"/>
@@ -53,7 +53,8 @@
             </StackPanel>
 
         </StackPanel>
-        <DataGrid Name="DtgDatas" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="298,0,0,155"/>
+
+        <DataGrid Name="DtgDatas" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="5,0,0,155" Grid.Column="1"/>
 
     </Grid>
 </Window>

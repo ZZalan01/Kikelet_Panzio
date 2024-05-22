@@ -21,6 +21,7 @@ namespace Kikelet_Panzio
     public partial class MainWindow : Window
     {
         internal static List<Ugyfel> ugyfelek = new List<Ugyfel>();
+
         
         public MainWindow()
         {
@@ -33,15 +34,14 @@ namespace Kikelet_Panzio
             {
                 CbxPeople.Items.Add(i);
             }
-
-            
-
         }
 
         private void MniReg_Click(object sender, RoutedEventArgs e)
         {
+            //Regisztrációs Ablak
             Register registerWindow = new Register();
             registerWindow.ShowDialog();
+            CbxPeople.Items.Refresh();
         }
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
@@ -51,14 +51,13 @@ namespace Kikelet_Panzio
 
         private void BtnConfirm_Click(object sender, RoutedEventArgs e)
         {
-
-            DtgDatas.Items.Add(ugyfelek);
-            DtgDatas.Items.Refresh();
+           //Adatok hozzáadása a DataGrid-hez
         }
 
 
         private void MniStats_Click(object sender, RoutedEventArgs e)
         {
+            //Statisztika Ablak
             Stats statsWindow = new Stats();
             statsWindow.ShowDialog();
         }

@@ -32,6 +32,8 @@ namespace Kikelet_Panzio
 
         private void BtnRegister_Click(object sender, RoutedEventArgs e)
         {
+            //Adatok tárolása 
+
             string nevid = TbxUsername.Text.ToLower().Replace(" ","") + "_" + DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Day;
             TbxUserID.Text = nevid;
             MainWindow.ugyfelek.Add(new Ugyfel(TbxUserID.Text, TbxUsername.Text, DateTime.Parse(DtpUserBirth.Text), TbxEmail.Text, CbxIsVIP.IsChecked.Value));
