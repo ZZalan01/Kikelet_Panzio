@@ -21,11 +21,16 @@ namespace Kikelet_Panzio
     public partial class MainWindow : Window
     {
         internal static List<Ugyfel> ugyfelek = new List<Ugyfel>();
+        internal static List<string> mentettAdatok = new List<string>();
 
-        
+
         public MainWindow()
         {
             InitializeComponent();
+            CbxName.Items.Add("Tóthné Nagy Etelka");
+            CbxName.Items.Add("Kis Géza");
+            CbxName.Items.Add("Erős Pista");
+            CbxName.Items.Add("Édes Anna");
             for (int i = 1; i <= 6; i++)
             {
                 CbxRooms.Items.Add(i);
@@ -41,7 +46,9 @@ namespace Kikelet_Panzio
             //Regisztrációs Ablak
             Register registerWindow = new Register();
             registerWindow.ShowDialog();
-            CbxPeople.Items.Refresh();
+            CbxName.Items.Refresh();
+            CbxName.Items.Add(ugyfelek[0].Username);
+           
         }
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
@@ -51,7 +58,26 @@ namespace Kikelet_Panzio
 
         private void BtnConfirm_Click(object sender, RoutedEventArgs e)
         {
-           //Adatok hozzáadása a DataGrid-hez
+            string CbxNameValue = CbxName.SelectedItem?.ToString() ?? "N/A";
+            string CbxPeopleValue = CbxPeople.SelectedItem?.ToString() ?? "N/A";
+            string CbxRoomsValue = CbxRooms.SelectedItem?.ToString() ?? "N/A";
+            string DtpArrivalValue = DtpArrival.SelectedDate?.ToString("yyyy-MM-dd") ?? "N/A";
+            string DtpDepartureValue = DtpDeparture.SelectedDate?.ToString("yyyy-MM-dd") ?? "N/A";
+            string TbxPriceValue = TbxPrice.Text;
+
+            mentettAdatok.Add($"ComboBox1: {CbxPeopleValue}");
+            mentettAdatok.Add($"ComboBox2: {CbxPeopleValue}");
+            mentettAdatok.Add($"ComboBox3: {CbxRoomsValue}");
+            mentettAdatok.Add($"DatePicker1: {DtpArrivalValue}");
+            mentettAdatok.Add($"DatePicker2: {DtpDepartureValue}");
+            mentettAdatok.Add($"TextBox: {TbxPriceValue}");
+
+            MessageBox.Show("Adatok mentve!");
+
+
+
+            DtgDatas.ItemsSource = ugyfelek;
+            DtgDatas.Items.Refresh();
         }
 
 

@@ -19,10 +19,11 @@ namespace Kikelet_Panzio
     /// </summary>
     public partial class Register : Window
     {
-       
+        List<string> ugyfelek;
         public Register()
         {
             InitializeComponent();
+            
         }
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
